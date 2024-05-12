@@ -88,6 +88,3 @@ class AddressInsert():
                                 insert_tam_adres.get()
                             ))
         btn_insert.grid(row=10, column=2)
-
-        # ADRES GÜNCELLEME IDYLE ADRES GÜNCELLEME SAYFASINDA GİDECEK VERİLER CEİLECEL VE GÜNCELLEME YAPIACAK
-        # KOD BURADA YAZILACAK
