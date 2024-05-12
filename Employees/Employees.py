@@ -1,6 +1,8 @@
 from tkinter import *
 from tkinter import messagebox
 from Database import Database
+from Employees.EmployeeInsert import EmployeeInsert
+from Employees.EmployeeUpdate import EmployeeUpdate
 
 
 class Employees:
@@ -9,19 +11,19 @@ class Employees:
 
 
     def goInsert(self, tk):
-        #insert = BranchInsert()
+        insert = EmployeeInsert()
         tk.destroy()
 
 
     def goUpdate(self, tk, id):
-        #update = BrancUpdate(id)
+        update = EmployeeUpdate(id)
         tk.destroy()
 
 
     def deleteAddress(self, tk, id):
         try:
             db = Database()
-            db.cursor.execute("DELETE FROM Calisanlar WHERE sube_id=?", id)
+            db.cursor.execute("DELETE FROM Calisanlar WHERE calisan_id=?", id)
             db.cnxn.commit()
 
         except Exception as e:
@@ -40,7 +42,7 @@ class Employees:
         db.cursor.execute("SELECT Calisanlar.calisan_id AS 'ID', Calisanlar.isim AS 'İsim', "
                           "Calisanlar.soy_isim AS 'Soy İsim', "
                           "Calisanlar.tel_no AS 'Telefon NO', Calisanlar.baslama_tarihi AS 'Başlama tarihi', "
-                          "Calisanlar.maas, Subeler.sube_id, Subeler.adres_id "
+                          "Calisanlar.maas, Subeler.sube_id, Subeler.adres_id AS 'Şube Adres ID' "
                           "FROM Calisanlar "
                           "LEFT JOIN Subeler ON Subeler.sube_id=Calisanlar.sube_id ")
 
