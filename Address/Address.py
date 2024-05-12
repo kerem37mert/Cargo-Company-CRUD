@@ -1,8 +1,8 @@
 from tkinter import *
 from tkinter import messagebox
 from Database import Database
-from AddressInsert import AddressInsert
-from AddressUpdate import AddressUpdate
+from Address.AddressInsert import AddressInsert
+from Address.AddressUpdate import AddressUpdate
 
 class Address:
     def __init__(self):

@@ -11,13 +11,14 @@ class AddressInsert():
 
         try:
             db = Database()
-            db.cursor.execute("INSERT INTO Adresler (il, ilce, mah, cad, sokak, kapi_no, posta_kodu, tam_adres)"
+            db.cursor.execute("INSERT INTO Adresler (il, ilce, mah, cad, sokak, kapi_no, posta_kodu, tam_adres) "
                               "VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
 
                               il, ilce, mah, cad, sokak, kapi_no, posta_kodu, tam_adres)
             db.cnxn.commit()
 
-        except:
+        except Exception as e:
+            print(e)
             messagebox.showinfo("Hata", "Bir sorun oluştu")
         else:
             messagebox.showinfo("Bilgi", "Adres başarıyla eklendi")
