@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter import messagebox
 from Database import Database
 from Status.StatusInsert import StatusInsert
+from Status.StatusUpdate import StatusUpdate
 
 
 class Status:
@@ -16,7 +17,7 @@ class Status:
 
 
     def goUpdate(self, tk, id):
-        #update = ShipmentUpdate(id)
+        update = StatusUpdate(id)
         tk.destroy()
 
 

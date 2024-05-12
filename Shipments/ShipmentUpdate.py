@@ -28,7 +28,7 @@ class ShipmentUpdate():
 
     def getData(self):
         db = Database()
-        db.cursor.execute("SELECT * FROM GOnderiler WHERE gonderi_id=?", self.id)
+        db.cursor.execute("SELECT * FROM Gonderiler WHERE gonderi_id=?", self.id)
         self.data = db.cursor.fetchone()
 
     def main(self):
