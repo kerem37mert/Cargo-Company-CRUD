@@ -5,6 +5,8 @@ from Prices.Prices import Prices
 from Shipments.Shipments import Shipments
 from Branches.Branches import Branches
 from Employees.Employees import Employees
+from Infos.Infos import Infos
+
 
 tk = Tk()
 tk.title("Kargo Firması Veritabanı")
@@ -31,6 +33,9 @@ def goBranches():
 
 def goEmployees():
     employees = Employees()
+
+def goInfos():
+    infos = Infos()
 
 
 btn_address = Button(tk,
@@ -73,11 +78,19 @@ btn_subeler = Button(tk,
 btn_subeler.pack()
 
 
-btn_subeler = Button(tk,
+btn_calisanlar = Button(tk,
             text="Çalışanlar",
             padx="20",pady="5",
             cursor="hand2",
             command=goEmployees)
-btn_subeler.pack()
+btn_calisanlar.pack()
+
+
+btn_bilgiler = Button(tk,
+            text="Gönderi Bilgileri",
+            padx="20",pady="5",
+            cursor="hand2",
+            command=goInfos)
+btn_bilgiler.pack()
 
 tk.mainloop()
