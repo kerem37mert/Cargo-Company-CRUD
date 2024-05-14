@@ -11,7 +11,10 @@ from Infos.Infos import Infos
 tk = Tk()
 tk.title("Kargo Firması Veritabanı")
 tk.geometry("1200x600")
-Label(tk, text="Kargo Firması Veritabanı", font=25).pack()
+bg_img_path = PhotoImage(file="img/bg.png")
+bg_image = Label(tk, image=bg_img_path)
+bg_image.place(relheight=1, relwidth=1)
+Label(tk, text="Kargo Firması Veritabanı", font=('', 20, 'bold'), bg="#FC4F03", fg="white").pack()
 
 
 
