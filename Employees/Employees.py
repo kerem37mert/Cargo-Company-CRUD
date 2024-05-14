@@ -98,3 +98,7 @@ class Employees:
         ### Row Count ###
         labelCount = Label(tk, text=f"Toplam Çalışan Sayısı: {rowCount("Calisanlar")}")
         labelCount.grid(row=i + 5, column=1)
+
+        ### Average Salary ###
+        labelAvg = Label(tk, text=f"Ortalama Maaş: {round(columnAvg("maas", "Calisanlar"),1)}")
+        labelAvg.grid(row=i + 6, column=1)
