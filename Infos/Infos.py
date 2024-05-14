@@ -3,7 +3,7 @@ from tkinter import messagebox
 from Database import Database
 from Infos.InfoInsert import InfoInsert
 from Infos.InfoUpdate import InfoUpdate
-
+from generalQueries import *
 
 class Infos:
     def __init__(self):
@@ -88,3 +88,7 @@ class Infos:
                             cursor="hand2",
                             command=lambda: self.deleteInfo(tk, entry_delete.get()))
         btn_delete.grid(row=i + 4, column=3)
+
+        ### Row Count ###
+        labelCount = Label(tk, text=f"Toplam Bilgi sayısı: {rowCount("Bilgiler")}")
+        labelCount.grid(row=i + 5, column=1)

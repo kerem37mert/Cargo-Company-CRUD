@@ -3,6 +3,7 @@ from tkinter import messagebox
 from Database import Database
 from Prices.PriceInsert import PriceInsert
 from Prices.PriceUpdate import PriceUpdate
+from generalQueries import *
 
 class Prices:
     def __init__(self):
@@ -87,3 +88,8 @@ class Prices:
                             cursor="hand2",
                             command=lambda: self.deletePrice(tk, entry_delete.get()))
         btn_delete.grid(row=i + 4, column=3)
+
+
+        ### Row Count ###
+        labelCount = Label(tk, text=f"Toplam Fiyat Paketi: {rowCount("Fiyatlar")}")
+        labelCount.grid(row=i + 5, column=1)

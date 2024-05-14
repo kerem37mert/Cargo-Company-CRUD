@@ -3,6 +3,7 @@ from tkinter import messagebox
 from Database import Database
 from Branches.BranchInsert import BranchInsert
 from Branches.BranchUpdate import BrancUpdate
+from generalQueries import *
 
 
 class Branches:
@@ -91,3 +92,7 @@ class Branches:
                             cursor="hand2",
                             command=lambda: self.deleteBranch(tk, entry_delete.get()))
         btn_delete.grid(row=i + 4, column=3)
+
+        ### Row Count ###
+        labelCount = Label(tk, text=f"Toplam Şube: {rowCount("Subeler")}")
+        labelCount.grid(row=i + 5, column=1)

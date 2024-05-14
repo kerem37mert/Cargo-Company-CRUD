@@ -3,7 +3,7 @@ from tkinter import messagebox
 from Database import Database
 from Persons.PersonInsert import PersonInsert
 from Persons.PersonUpdate import PersonUpdate
-
+from generalQueries import *
 
 class Persons:
     def __init__(self):
@@ -90,3 +90,7 @@ class Persons:
                             cursor="hand2",
                             command=lambda: self.deletePerson(tk, entry_delete.get()))
         btn_delete.grid(row=i + 4, column=3)
+
+        ### Row Count ###
+        labelCount = Label(tk, text=f"Toplam Kişi Sayısı: {rowCount("Kisiler")}")
+        labelCount.grid(row=i + 5, column=1)

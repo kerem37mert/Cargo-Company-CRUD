@@ -87,7 +87,7 @@ class Address:
         btn_delete.grid(row=i+4, column=3)
 
         ### Row Count ###
-        labelCount = Label(tk, text=f"Toplam Adres: {rowCount("Adresler")}")
+        labelCount = Label(tk, text=f"Toplam Adres Sayısı: {rowCount("Adresler")}")
         labelCount.grid(row=i+5, column=1)
 
 

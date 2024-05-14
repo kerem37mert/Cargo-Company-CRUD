@@ -4,6 +4,7 @@ from Database import Database
 from Shipments.ShipmentInsert import ShipmentInsert
 from Shipments.ShipmentUpdate import ShipmentUpdate
 from Status.Status import Status
+from generalQueries import *
 
 class Shipments:
     def __init__(self):
@@ -108,3 +109,7 @@ class Shipments:
                             cursor="hand2",
                             command=lambda: self.deleteShipment(tk, entry_delete.get()))
         btn_delete.grid(row=i + 4, column=3)
+
+        ### Row Count ###
+        labelCount = Label(tk, text=f"Toplam Gönderi Sayısı: {rowCount("Gonderiler")}")
+        labelCount.grid(row=i + 5, column=1)

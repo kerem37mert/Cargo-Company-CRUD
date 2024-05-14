@@ -3,6 +3,7 @@ from tkinter import messagebox
 from Database import Database
 from Employees.EmployeeInsert import EmployeeInsert
 from Employees.EmployeeUpdate import EmployeeUpdate
+from generalQueries import *
 
 
 class Employees:
@@ -93,3 +94,7 @@ class Employees:
                             cursor="hand2",
                             command=lambda: self.deleteEmployee(tk, entry_delete.get()))
         btn_delete.grid(row=i + 4, column=3)
+
+        ### Row Count ###
+        labelCount = Label(tk, text=f"Toplam Çalışan Sayısı: {rowCount("Calisanlar")}")
+        labelCount.grid(row=i + 5, column=1)
