@@ -25,7 +25,7 @@ class Shipments:
         tk.destroy()
 
 
-    def deleteAddress(self, tk, id):
+    def deleteShipment(self, tk, id):
         try:
             db = Database()
             db.cursor.execute("DELETE FROM Gonderiler WHERE gonderi_id=?", id)
@@ -106,5 +106,5 @@ class Shipments:
                             text="Gönderi Sil",
                             padx="20", pady="5",
                             cursor="hand2",
-                            command=lambda: self.deleteAddress(tk, entry_delete.get()))
+                            command=lambda: self.deleteShipment(tk, entry_delete.get()))
         btn_delete.grid(row=i + 4, column=3)

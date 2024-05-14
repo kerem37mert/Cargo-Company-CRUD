@@ -20,7 +20,7 @@ class Branches:
         tk.destroy()
 
 
-    def deleteAddress(self, tk, id):
+    def deleteBranch(self, tk, id):
         try:
             db = Database()
             db.cursor.execute("DELETE FROM Subeler WHERE sube_id=?", id)
@@ -89,5 +89,5 @@ class Branches:
                             text="Şube Sil",
                             padx="20", pady="5",
                             cursor="hand2",
-                            command=lambda: self.deleteAddress(tk, entry_delete.get()))
+                            command=lambda: self.deleteBranch(tk, entry_delete.get()))
         btn_delete.grid(row=i + 4, column=3)

@@ -19,7 +19,7 @@ class Prices:
         tk.destroy()
 
 
-    def deleteAddress(self, tk, id):
+    def deletePrice(self, tk, id):
         try:
             db = Database()
             db.cursor.execute("DELETE FROM Fiyatlar WHERE fiyat_id=?", id)
@@ -85,5 +85,5 @@ class Prices:
                             text="Fiyat Sil",
                             padx="20", pady="5",
                             cursor="hand2",
-                            command=lambda: self.deleteAddress(tk, entry_delete.get()))
+                            command=lambda: self.deletePrice(tk, entry_delete.get()))
         btn_delete.grid(row=i + 4, column=3)

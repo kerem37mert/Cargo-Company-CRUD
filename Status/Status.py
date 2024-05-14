@@ -21,7 +21,7 @@ class Status:
         tk.destroy()
 
 
-    def deleteAddress(self, tk, id):
+    def deleteStatus(self, tk, id):
         try:
             db = Database()
             db.cursor.execute("DELETE FROM Durumlar WHERE durum_id=?", id)
@@ -92,5 +92,5 @@ class Status:
                             text="Durum Sil",
                             padx="20", pady="5",
                             cursor="hand2",
-                            command=lambda: self.deleteAddress(tk, entry_delete.get()))
+                            command=lambda: self.deleteStatus(tk, entry_delete.get()))
         btn_delete.grid(row=i + 4, column=3)

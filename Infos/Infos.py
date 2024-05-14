@@ -20,7 +20,7 @@ class Infos:
         tk.destroy()
 
 
-    def deleteAddress(self, tk, id):
+    def deleteInfo(self, tk, id):
         try:
             db = Database()
             db.cursor.execute("DELETE FROM Bilgiler WHERE bilgi_id=?", id)
@@ -86,5 +86,5 @@ class Infos:
                             text="Bilgi Sil",
                             padx="20", pady="5",
                             cursor="hand2",
-                            command=lambda: self.deleteAddress(tk, entry_delete.get()))
+                            command=lambda: self.deleteInfo(tk, entry_delete.get()))
         btn_delete.grid(row=i + 4, column=3)

@@ -3,6 +3,7 @@ from tkinter import messagebox
 from Database import Database
 from Address.AddressInsert import AddressInsert
 from Address.AddressUpdate import AddressUpdate
+from generalQueries import *
 
 class Address:
     def __init__(self):
@@ -33,7 +34,6 @@ class Address:
     def main(self):
         tk = Tk()
         tk.geometry("1200x600")
-
 
         db = Database()
         db.cursor.execute("SELECT * FROM Adresler")   ### Select all rows
@@ -85,4 +85,9 @@ class Address:
                             cursor="hand2",
                             command=lambda: self.deleteAddress(tk, entry_delete.get()))
         btn_delete.grid(row=i+4, column=3)
+
+        ### Row Count ###
+        labelCount = Label(tk, text=f"Toplam Adres: {rowCount("Adresler")}")
+        labelCount.grid(row=i+5, column=1)
+
 

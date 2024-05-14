@@ -20,7 +20,7 @@ class Employees:
         tk.destroy()
 
 
-    def deleteAddress(self, tk, id):
+    def deleteEmployee(self, tk, id):
         try:
             db = Database()
             db.cursor.execute("DELETE FROM Calisanlar WHERE calisan_id=?", id)
@@ -91,5 +91,5 @@ class Employees:
                             text="Çalışan Sil",
                             padx="20", pady="5",
                             cursor="hand2",
-                            command=lambda: self.deleteAddress(tk, entry_delete.get()))
+                            command=lambda: self.deleteEmployee(tk, entry_delete.get()))
         btn_delete.grid(row=i + 4, column=3)
