@@ -42,7 +42,8 @@ class Employees:
         db = Database()
         db.cursor.execute("SELECT Calisanlar.calisan_id AS 'ID', Calisanlar.isim AS 'İsim', "
                           "Calisanlar.soy_isim AS 'Soy İsim', "
-                          "Calisanlar.tel_no AS 'Telefon NO', Calisanlar.baslama_tarihi AS 'Başlama tarihi', "
+                          "Calisanlar.tel_no AS 'Telefon NO', "
+                          "Format(Calisanlar.baslama_tarihi, 'dd/MM/yy') AS 'Başlama tarihi', "
                           "Calisanlar.maas, Subeler.sube_id, Subeler.adres_id AS 'Şube Adres ID' "
                           "FROM Calisanlar "
                           "LEFT JOIN Subeler ON Subeler.sube_id=Calisanlar.sube_id ")
