@@ -3,6 +3,7 @@ from tkinter import messagebox
 from Database import Database
 from Persons.PersonInsert import PersonInsert
 from Persons.PersonUpdate import PersonUpdate
+from Persons.PersonSearch import PersonSearch
 from generalQueries import *
 
 class Persons:
@@ -31,6 +32,10 @@ class Persons:
         else:
             messagebox.showinfo("Bilgi", f"{id} ID'li satır başarıyla silindi")
             tk.destroy()
+
+
+    def goSearch(self, tk, query):
+        search = PersonSearch(query)
 
 
     def main(self):
@@ -94,3 +99,15 @@ class Persons:
         ### Row Count ###
         labelCount = Label(tk, text=f"Toplam Kişi Sayısı: {rowCount("Kisiler")}")
         labelCount.grid(row=i + 5, column=1)
+
+        ### Search ###
+        label_search = Label(tk, text="Kişi Ara:")
+        label_search.grid(row=i + 6, column=1)
+        entry_search = Entry(tk)
+        entry_search.grid(row=i +6, column=2)
+        btn_search = Button(tk,
+                            text="Kişi Ara",
+                            padx="20", pady="5",
+                            cursor="hand2",
+                            command=lambda: self.goSearch(tk, entry_search.get()))
+        btn_search.grid(row=i + 6, column=3)
