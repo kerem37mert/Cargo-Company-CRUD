@@ -42,7 +42,7 @@ class Address:
         tk.geometry("1200x600")
 
         db = Database()
-        db.cursor.execute("SELECT * FROM Adresler ")   ### Select all rows
+        db.cursor.execute("EXEC SelectAllAddress")   ### Select all rows // Stored Procedure
 
 
         columns = [description[0] for description in db.cursor.description]
