@@ -10,9 +10,6 @@ class Database:
                                        "Database=Cargo_Company;"
                                        "Trusted_Connection=yes;")
 
-
-
-
         except Exception as e:
             print(f"Error: {e}")
         else:

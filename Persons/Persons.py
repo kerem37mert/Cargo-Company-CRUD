@@ -73,7 +73,6 @@ class Persons:
                             command=lambda: self.goInsert(tk))
         btn_insert.grid(row=i + 2, column=1)
 
-
         label_update = Label(tk, text="ID:")
         label_update.grid(row=i + 3, column=1)
         entry_update = Entry(tk)

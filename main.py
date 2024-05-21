@@ -8,6 +8,7 @@ from Employees.Employees import Employees
 from Infos.Infos import Infos
 
 
+
 tk = Tk()
 tk.title("Kargo Firması Veritabanı")
 tk.geometry("1200x600")

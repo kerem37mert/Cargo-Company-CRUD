@@ -3,6 +3,7 @@ from tkinter import messagebox
 from Database import Database
 from Address.AddressInsert import AddressInsert
 from Address.AddressUpdate import AddressUpdate
+from Address.Cities import Cities
 from generalQueries import *
 
 class Address:
@@ -13,6 +14,11 @@ class Address:
     def goInsert(self, tk):
         insert = AddressInsert()
         tk.destroy()
+
+
+    def goCities(self, tk):
+        cities = Cities()
+
 
 
     def goUpdate(self, tk, id):
@@ -36,7 +42,7 @@ class Address:
         tk.geometry("1200x600")
 
         db = Database()
-        db.cursor.execute("SELECT * FROM Adresler")   ### Select all rows
+        db.cursor.execute("SELECT * FROM Adresler ")   ### Select all rows
 
 
         columns = [description[0] for description in db.cursor.description]
@@ -61,6 +67,14 @@ class Address:
                              cursor="hand2",
                              command=lambda: self.goInsert(tk))
         btn_insert.grid(row=i+2, column=1)
+
+
+        btn_insert = Button(tk,
+                            text="İlleri Göster",
+                            padx="20", pady="5",
+                            cursor="hand2",
+                            command=lambda: self.goCities(tk))
+        btn_insert.grid(row=i + 2, column=2)
 
 
         label_update = Label(tk, text="ID:")

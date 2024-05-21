@@ -2,19 +2,16 @@ from tkinter import *
 from Database import Database
 
 
-class PersonSearch:
-    def __init__(self, query):
-        self.query = query
+class Cities:
+    def __init__(self):
         self.main()
 
     def main(self):
         tk = Tk()
-        tk.geometry("800x400")
+        tk.geometry("400x400")
 
         db = Database()
-        db.cursor.execute("SELECT * FROM KisiKisaBilgi "
-                          "WHERE isim LIKE ? OR soy_isim LIKE ?",
-                          f"%{self.query}%", f"%{self.query}%")
+        db.cursor.execute("SELECT il, COUNT(il) AS 'Sayı' FROM Adresler GROUP BY il ORDER BY COUNT(il) DESC")
 
         columns = [description[0] for description in db.cursor.description]
         for j, column_name in enumerate(columns):
