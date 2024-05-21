@@ -12,7 +12,7 @@ class PersonSearch:
         tk.geometry("800x400")
 
         db = Database()
-        db.cursor.execute("SELECT * FROM KisiKisaBilgi "
+        db.cursor.execute("SELECT * FROM KisiKgitisaBilgi "
                           "WHERE isim LIKE ? OR soy_isim LIKE ?",
                           f"%{self.query}%", f"%{self.query}%")
 

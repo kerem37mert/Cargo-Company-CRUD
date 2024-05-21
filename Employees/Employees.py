@@ -46,7 +46,8 @@ class Employees:
                           "Format(Calisanlar.baslama_tarihi, 'dd/MM/yy') AS 'Başlama tarihi', "
                           "Calisanlar.maas, Subeler.sube_id, Subeler.adres_id AS 'Şube Adres ID' "
                           "FROM Calisanlar "
-                          "LEFT JOIN Subeler ON Subeler.sube_id=Calisanlar.sube_id ")
+                          "LEFT JOIN Subeler ON Subeler.sube_id=Calisanlar.sube_id "
+                          "ORDER BY Calisanlar.isim ASC")
 
 
         columns = [description[0] for description in db.cursor.description]
