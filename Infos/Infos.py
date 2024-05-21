@@ -72,7 +72,7 @@ class Infos:
         entry_update = Entry(tk)
         entry_update.grid(row=i + 3, column=2)
         btn_update = Button(tk,
-                            text="Bilgi GÜncelle Güncelle",
+                            text="Bilgi Güncelle",
                             padx="20", pady="5",
                             cursor="hand2",
                             command=lambda: self.goUpdate(tk, entry_update.get()))
