@@ -104,3 +104,7 @@ class Employees:
         ### Average Salary ###
         labelAvg = Label(tk, text=f"Ortalama Maaş: {round(columnAvg("maas", "Calisanlar"),1)}")
         labelAvg.grid(row=i + 6, column=1)
+
+        ## Sum Salary ##
+        labelAvg = Label(tk, text=f"Toplam Maaş: {round(columnSum("maas", "Calisanlar"), 1)}")
+        labelAvg.grid(row=i + 7, column=1)
