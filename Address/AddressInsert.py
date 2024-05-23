@@ -11,9 +11,8 @@ class AddressInsert():
 
         try:
             db = Database()
-            db.cursor.execute("INSERT INTO Adresler (il, ilce, mah, cad, sokak, kapi_no, posta_kodu, tam_adres) "
-                              "VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
-
+            db.cursor.execute("EXEC InsertAddress "
+                              "@il=?, @ilce=?, @mah=?, @cad=?, @sokak=?, @kapi_no=?, @posta_kodu=?, @tam_adres=?",
                               il, ilce, mah, cad, sokak, kapi_no, posta_kodu, tam_adres)
             db.cnxn.commit()
 
