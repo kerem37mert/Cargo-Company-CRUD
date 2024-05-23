@@ -8,13 +8,13 @@ class AddressUpdate():
         self.main()
 
     #update method
-    def update(self, tk, il, ilce, mah, cad, sokak, kapi_no, posta_kodu, tam_adres):
+    def update(self, tk, il, ilce, mah, cad, sokak, kapi_no, posta_kodu):
 
         try:
             db = Database()
-            db.cursor.execute("UPDATE Adresler SET il=?, ilce=?, mah=?, cad=?, sokak=?, kapi_no=?, posta_kodu=?, tam_adres=? "
+            db.cursor.execute("UPDATE Adresler SET il=?, ilce=?, mah=?, cad=?, sokak=?, kapi_no=?, posta_kodu=? "
                               "WHERE adres_id=?",
-                              il, ilce, mah, cad, sokak, kapi_no, posta_kodu, tam_adres, self.id)
+                              il, ilce, mah, cad, sokak, kapi_no, posta_kodu, self.id)
             db.cnxn.commit()
 
         except Exception as e:
@@ -84,12 +84,6 @@ class AddressUpdate():
         update_posta_kodu.insert(0, self.data[7])
         update_posta_kodu.grid(row=9, column=2)
 
-        label_tam_adres = Label(tk, text="Tam Adres")
-        label_tam_adres.grid(row=10, column=1)
-        update_tam_adres = Entry(tk)
-        update_tam_adres.insert(0, self.data[8])
-        update_tam_adres.grid(row=10, column=2)
-
         btn_update = Button(tk,
                             text="Güncelle",
                             padx="10", pady="5",
@@ -103,6 +97,5 @@ class AddressUpdate():
                                 update_sokak.get(),
                                 update_kapi_no.get(),
                                 update_posta_kodu.get(),
-                                update_tam_adres.get()
                             ))
         btn_update.grid(row=11, column=2)

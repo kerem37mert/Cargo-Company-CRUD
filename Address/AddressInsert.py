@@ -7,13 +7,13 @@ class AddressInsert():
         self.main()
 
     #insert method
-    def insert(self,tk, il, ilce, mah, cad, sokak, kapi_no, posta_kodu, tam_adres):
+    def insert(self,tk, il, ilce, mah, cad, sokak, kapi_no, posta_kodu):
 
         try:
             db = Database()
             db.cursor.execute("EXEC InsertAddress "
-                              "@il=?, @ilce=?, @mah=?, @cad=?, @sokak=?, @kapi_no=?, @posta_kodu=?, @tam_adres=?",
-                              il, ilce, mah, cad, sokak, kapi_no, posta_kodu, tam_adres)
+                              "@il=?, @ilce=?, @mah=?, @cad=?, @sokak=?, @kapi_no=?, @posta_kodu=?",
+                              il, ilce, mah, cad, sokak, kapi_no, posta_kodu)
             db.cnxn.commit()
 
         except Exception as e:
@@ -67,11 +67,6 @@ class AddressInsert():
         insert_posta_kodu = Entry(tk)
         insert_posta_kodu.grid(row=8, column=2)
 
-        label_tam_adres = Label(tk, text="Tam Adres")
-        label_tam_adres.grid(row=9, column=1)
-        insert_tam_adres = Entry(tk)
-        insert_tam_adres.grid(row=9, column=2)
-
         btn_insert = Button(tk,
                             text="Ekle",
                             padx="10", pady="5",
@@ -84,7 +79,6 @@ class AddressInsert():
                                 insert_cad.get(),
                                 insert_sokak.get(),
                                 insert_kapi_no.get(),
-                                insert_posta_kodu.get(),
-                                insert_tam_adres.get()
+                                insert_posta_kodu.get()
                             ))
         btn_insert.grid(row=10, column=2)
