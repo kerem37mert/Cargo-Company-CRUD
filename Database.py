@@ -4,7 +4,7 @@ class Database:
     def __init__(self):
         try:
 
-            # SQl Server
+            # SQL Server
             self.cnxn = pyodbc.connect("Driver={SQL Server};"
                                        r"Server=DESKTOP-SKM8I25\SQLEXPRESS;"
                                        "Database=Cargo_Company;"

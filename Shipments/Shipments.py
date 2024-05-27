@@ -42,7 +42,7 @@ class Shipments:
 
     def main(self):
         tk = Tk()
-        tk.geometry("1200x600")
+        tk.geometry ("1200x600")
 
         db = Database()
         db.cursor.execute("SELECT Gonderiler.gonderi_id, Gonderiler.agirlik, "
